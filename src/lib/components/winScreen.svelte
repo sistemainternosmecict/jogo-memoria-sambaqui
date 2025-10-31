@@ -1,21 +1,23 @@
 <script lang="ts">
-	import type { MouseEventHandler } from "svelte/elements";
+	import type { MouseEventHandler } from 'svelte/elements';
 
-    const {resetCallback} : {resetCallback : MouseEventHandler<any>} = $props();
-
+	const {
+		resetCallback,
+		totalSeconds
+	}: { resetCallback: MouseEventHandler<any>; totalSeconds: number } = $props();
+	const totalTimeMessage = `${Math.floor(totalSeconds / 60)} minuto(s) ${(totalSeconds % 60).toFixed(2)} segundo(s)`;
 </script>
 
-<main class="fixed z-2 inset-0 flex items-center bg-black/50 justify-center ">
-  <div class="flex flex-col justify-evenly items-center h-30 min-w-1/4 p-3 min-h-1/4 bg-green-800 rounded-2xl">
-    <h1 class="text-5xl font-bold" >
-        VOCÊ GANHOU!!!
-    </h1 >
-    <button onclick={resetCallback} class="bg-green-950  p-3 font-bold rounded-2xl">
-        Jogar de novo!
-    </button>
-  </div>
+<main class="fixed p-5 inset-0 z-2 flex items-center justify-center bg-black/50">
+	<div
+		class="flex min-h-1/4 min-w-1/4 flex-col items-center border-4 border-[#8C6239] justify-evenly rounded-2xl bg-[#bd722e] p-3"
+	>
+		<h1 class="text-5xl font-bold">
+			VOCÊ CONSEGUIU!!!
+		</h1>
+    <p>{totalTimeMessage}</p>
+		<button onclick={resetCallback} class="rounded-2xl mt-5 bg-green-950 p-3 font-bold">
+			Jogar de novo!
+		</button>
+	</div>
 </main>
-
-<style>
-    
-</style>

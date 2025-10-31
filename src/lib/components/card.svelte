@@ -17,11 +17,11 @@
 	<div class="card-container {flipped ? 'flipped' : ''}">
 		<!-- Front -->
 		<figure class="card-side front flex w-full justify-stretch text-white">
-			<div class=" dr ax-h-[176px] min-w-0 flex-1 overflow-hidden rounded-t-2xl bg-white">
-				<img src={iconSrc} alt={name} class="h-full object-cover"/>
+			<div class="min-w-0 flex-1 overflow-hidden">
+				<img src={iconSrc} alt={name} class="card-img h-full rounded-t-2xl object-cover"/>
 			</div>
 			<figcaption
-				class="w-full text-wrap whitespace-wrap content-center rounded-b-xl bg-green-900 p-2 text-xl font-bold"
+				class="w-full text-wrap whitespace-wrap content-center rounded-b-xl  p-2 text-xl font-bold"
 			>
 				{name}
 			</figcaption>
@@ -48,12 +48,16 @@
     }
 	.card-container {
 		position: relative;
-		width: 11rem;
-		height: 17rem;
+		aspect-ratio: 10.65 / 16;
+  
+ 
 		transition: transform 0.6s;
 		transform-style: preserve-3d;
 	}
 
+	.card-img{
+		border: solid 2px #8C6239;
+	}
 	.card-container.flipped {
 		transform: rotateY(180deg);
 	}
@@ -66,20 +70,19 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 1rem;
-		border-radius: 1rem;
+		padding: .5rem;
+		border-radius: .5rem;
 		background-size: cover;
 	}
 
 	.card-side.front {
 		transform: rotateY(0deg);
-		background-image: url('/frontCard.png');
+		background-color: #DCA65C;
+		border: solid 3px #4B2E05;
 	}
 
 	.card-side.back {
 		transform: rotateY(180deg);
 		background-image: url('/card.svg');
-		background-color: #0d3f4b;
-		background-size: contain;
 	}
 </style>

@@ -5,7 +5,7 @@
 	import WinScreen from '$lib/components/winScreen.svelte';
 	const { data }: PageProps = $props();
 	const { options } = data;
-	const CARDS_SIZE = 9;
+	const CARDS_SIZE = 8;
 
 	type Card = {
 		name: string;
@@ -15,6 +15,7 @@
 	};
 
 	let cardFlipped: Card | undefined = $state();
+	let gameStart = $state(Date.now());
 
 	function clicked(card: Card) {
 		if (card.matchFound || locked || cardFlipped === card) {
@@ -67,6 +68,7 @@
 			}
 		}
 
+		gameStart = Date.now();
 		return shuffle(newCards);
 	}
 
@@ -85,23 +87,20 @@
 	let locked = false;
 </script>
 
-<div class="content flex min-h-screen flex-col bg-[#0b6170] text-white">
-	<section class="flex p-4 flex-wrap justify-center">
-		<h1 class="text-shadow-lg text-center text-5xl font-bold">Jogo da Memória</h1>
-		<div class="flex-wrap shadow-xl p-5 bottom-0 z-1 rounded-2xl flex justify-between  w-screen ">
-			<img class="md:m-0 m-auto object-contain max-h-[130px]" src="/logo.webp" alt="logo" />
-
-			<section class="mt-5 md:m-0">
-					<p>Em conjunto com:</p>
-					<div class="pl-3">
-					 <h1 class= "font-bold">Secretaria Municipal de</h1>
-					<p>Educação, Cultura, Inclusão, Ciência e Tecnologia.</p>
-			</div>
-				</section>
+<div class="content flex min-h-screen flex-col bg-[#bd722e] text-white">
+	<section
+		class="z-1 m-3 flex flex-wrap items-center justify-center rounded-2xl bg-[#0b6170] p-5 shadow-xl"
+	>
+		<h1 class="rounded-tl-2xl rounded-tr-2xl text-center text-5xl font-bold text-shadow-lg">
+			Jogo da Memória
+		</h1>
+		<div class="m-auto flex max-w-full flex-wrap justify-center">
+			<img class="h-20 object-contain pr-4" src="/LOGO_FLIS.svg" alt="logo" />
+			<img class="h-20 object-contain" src="/logo_edu_smda.svg" alt="logo" />
 		</div>
 	</section>
 
-	<div class="m-3 flex flex-1 flex-wrap content-center items-center justify-center gap-4">
+	<div class="card-container m-3 mt-auto mb-auto">
 		{#each cards as { icon, name, flipped, matchFound }, idx}
 			{@const card = cards[idx]}
 			<Card
@@ -114,8 +113,15 @@
 	</div>
 
 	{#if cardsLeft === 0}
-		<WinScreen resetCallback={reset}></WinScreen>
+		<WinScreen totalSeconds={(Date.now() - gameStart) / 1000} resetCallback={reset}></WinScreen>
 	{/if}
 </div>
 
+<style>
+	.card-container {
+		display: grid;
+		gap: 1rem;
 
+		grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+	}
+</style>
