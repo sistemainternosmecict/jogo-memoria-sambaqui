@@ -10,7 +10,7 @@
 
 <main class="fixed p-5 inset-0 z-2 flex items-center justify-center bg-black/50">
 	<div
-		class="flex min-h-1/4 min-w-1/4 flex-col items-center border-4 border-[#8C6239] justify-evenly rounded-2xl bg-[#bd722e] p-3"
+		class="flex min-h-1/4 min-w-1/4 flex-col items-center border-4 justify-evenly rounded-2xl bg-[#3b571c] p-3"
 	>
 		<h1 class="text-5xl font-bold">
 			VOCÊ CONSEGUIU!!!
