@@ -15,19 +15,10 @@
 
 <button onclick={mouseClick} class="perspective">
 	<div class="card-container {flipped ? 'flipped' : ''}">
-		<!-- Front -->
-		<figure class="card-side front flex w-full justify-stretch text-white">
-			<div class="min-w-0 flex-1 overflow-hidden">
-				<img src={iconSrc} alt={name} class="card-img h-full rounded-t-2xl object-cover"/>
-			</div>
-			<figcaption
-				class="w-full text-wrap whitespace-wrap content-center rounded-b-xl  p-2 text-xl font-bold"
-			>
-				{name}
-			</figcaption>
-		</figure>
-
-		<!-- Back -->
+		<div class="card-side front">
+		<img src={iconSrc} alt={name} class="h-full object-cover"/>
+		</div>
+		<p class="fixed bottom-0 text-[14px] bg-[rgba(0,0,0,0.8)] p-2 rounded-b-[8px] w-[100%]">{name}</p>
 		<figure class="card-side back items-center justify-center bg-black text-white"></figure>
 	</div>
 </button>
@@ -49,15 +40,13 @@
 	.card-container {
 		position: relative;
 		aspect-ratio: 10.65 / 16;
+		border-radius: 5rem;
   
  
 		transition: transform 0.6s;
 		transform-style: preserve-3d;
 	}
 
-	.card-img{
-		border: solid 2px #8C6239;
-	}
 	.card-container.flipped {
 		transform: rotateY(180deg);
 	}
@@ -70,19 +59,17 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: .5rem;
 		border-radius: .5rem;
 		background-size: cover;
 	}
 
 	.card-side.front {
 		transform: rotateY(0deg);
-		background-color: #DCA65C;
-		border: solid 3px #4B2E05;
+		background-color: #758d4c;
 	}
 
 	.card-side.back {
 		transform: rotateY(180deg);
-		background-image: url('/card.svg');
+		background-image: url('/verso.png');
 	}
 </style>

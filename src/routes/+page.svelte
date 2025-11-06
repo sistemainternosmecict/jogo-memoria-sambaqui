@@ -87,16 +87,18 @@
 	let locked = false;
 </script>
 
-<div class="content flex min-h-screen flex-col bg-[#bd722e] text-white">
+<div class="relative content flex min-h-screen flex-col bg-[#bd722e] text-white">
+	<img src="/foto_aerea_sambaqui.png" alt="Foto aerea do sambaqui usada como fundo para o jogo."
+	class="absolute z-[–1] w-[100%]">
 	<section
 		class="z-1 m-3 flex flex-wrap items-center justify-center rounded-2xl bg-[#0b6170] p-5 shadow-xl"
 	>
 		<h1 class="rounded-tl-2xl rounded-tr-2xl text-center text-5xl font-bold text-shadow-lg">
-			Jogo da Memória
+			Jogo da Memória - SAMBAQUI DA BEIRADA
 		</h1>
 		<div class="m-auto flex max-w-full flex-wrap justify-center">
 			<img class="h-20 object-contain pr-4" src="/LOGO_FLIS.svg" alt="logo" />
-			<img class="h-20 object-contain" src="/logo_edu_smda.svg" alt="logo" />
+			<img class="h-20 object-contain" src="/logo_edu.svg" alt="logo" />
 		</div>
 	</section>
 
