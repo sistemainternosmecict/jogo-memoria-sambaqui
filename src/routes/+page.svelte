@@ -91,14 +91,13 @@
 	<img src="/foto_aerea_sambaqui.png" alt="Foto aerea do sambaqui usada como fundo para o jogo."
 	class="absolute z-[–1] w-[100%]">
 	<section
-		class="z-1 m-3 flex flex-wrap items-center justify-center rounded-2xl bg-[#0b6170] p-5 shadow-xl"
+		class="z-1 m-3 flex flex-wrap items-center justify-between rounded-2xl bg-[#3b571c] p-5 shadow"
 	>
-		<h1 class="rounded-tl-2xl rounded-tr-2xl text-center text-5xl font-bold text-shadow-lg">
-			Jogo da Memória - SAMBAQUI DA BEIRADA
-		</h1>
-		<div class="m-auto flex max-w-full flex-wrap justify-center">
-			<img class="h-20 object-contain pr-4" src="/LOGO_FLIS.svg" alt="logo" />
-			<img class="h-20 object-contain" src="/logo_edu.svg" alt="logo" />
+		<img src="/logo_typo_sambaqui.svg" alt="Logo do jogo da memoria do sambaqui" class="h-18">
+
+		<div class=" flex max-w-full flex-wrap justify-end">
+			<img class="h-18 object-contain pr-4" src="/LOGO_FLIS.svg" alt="logo" />
+			<img class="h-18 object-contain" src="/logo_edu.svg" alt="logo" />
 		</div>
 	</section>
 
