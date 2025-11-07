@@ -18,7 +18,7 @@
 		<div class="card-side front">
 		<img src={iconSrc} alt={name} class="h-full object-cover"/>
 		</div>
-		<p class="fixed bottom-0 text-[14px] bg-[rgba(59,87,28,0.8)] p-2 rounded-b-[8px] w-[100%]">{name}</p>
+		<p class="fixed bottom-0 text-[10px] bg-[rgba(59,87,28,0.8)] p-2 rounded-b-[8px] w-[100%]">{name}</p>
 		<figure class="card-side back items-center justify-center bg-black text-white"></figure>
 	</div>
 </button>
