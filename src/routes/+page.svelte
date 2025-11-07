@@ -5,7 +5,7 @@
 	import WinScreen from '$lib/components/winScreen.svelte';
 	const { data }: PageProps = $props();
 	const { options } = data;
-	const CARDS_SIZE = 8;
+	const CARDS_SIZE = 12;
 
 	type Card = {
 		name: string;
@@ -87,11 +87,11 @@
 	let locked = false;
 </script>
 
-<div class="relative content flex min-h-screen flex-col bg-[#bd722e] text-white">
+<div class="relative content flex min-h-screen flex-col bg-[#fff] text-white">
 	<img src="/foto_aerea_sambaqui.png" alt="Foto aerea do sambaqui usada como fundo para o jogo."
-	class="absolute z-[–1] w-[100%]">
+	class="absolute z-[–1] w-[100%] opacity-70">
 	<section
-		class="z-1 m-3 flex flex-wrap items-center justify-between rounded-2xl bg-[#3b571c] p-5 shadow"
+		class="z-1 m-3 flex flex-wrap items-center justify-between rounded-2xl bg-[#3b571c] p-5 shadow-lg shadow-black"
 	>
 		<img src="/logo_typo_sambaqui.svg" alt="Logo do jogo da memoria do sambaqui" class="h-18">
 
@@ -101,7 +101,7 @@
 		</div>
 	</section>
 
-	<div class="card-container m-3 mt-auto mb-auto">
+	<div class="card-container m-3 mt-3 mb-auto">
 		{#each cards as { icon, name, flipped, matchFound }, idx}
 			{@const card = cards[idx]}
 			<Card
@@ -121,8 +121,8 @@
 <style>
 	.card-container {
 		display: grid;
-		gap: 1rem;
+		gap: .5rem;
 
-		grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
 	}
 </style>

@@ -14,7 +14,7 @@
 </script>
 
 <button onclick={mouseClick} class="perspective">
-	<div class="card-container {flipped ? 'flipped' : ''}">
+	<div class="card-container shadow-md shadow-black {flipped ? 'flipped' : ''}">
 		<div class="card-side front">
 		<img src={iconSrc} alt={name} class="h-full object-cover"/>
 		</div>
